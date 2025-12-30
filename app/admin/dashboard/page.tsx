@@ -35,7 +35,6 @@ function DashboardContent() {
     const [scans, setScans] = useState<ScanData[]>([])
     const [loading, setLoading] = useState(true)
     const [qrItem, setQrItem] = useState<{ id: string, name: string } | null>(null)
-    const [adminName, setAdminName] = useState<string>('')
 
     const fetchData = async () => {
         setLoading(true)
@@ -56,12 +55,7 @@ function DashboardContent() {
 
         if (scanData) setScans(scanData as any)
 
-        // 3. Fetch User Profile
-        const { data: { user } } = await supabase.auth.getUser()
-        if (user) {
-            const { data: profile } = await supabase.from('profiles').select('full_name, email').eq('id', user.id).single()
-            if (profile) setAdminName(profile.full_name || profile.email?.split('@')[0] || 'Admin')
-        }
+
 
         setLoading(false)
     }
@@ -112,22 +106,17 @@ function DashboardContent() {
     }
 
     return (
-        <div className="flex-1 md:ml-64 p-8">
+        <div className="flex-1 md:ml-72 p-8 pt-24 md:pt-8">
             {/* Header */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
                 <div>
                     <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-                        {currentRestaurant === 'All' ? `Overview ${adminName ? '— ' + adminName : ''}` : currentRestaurant}
+                        {currentRestaurant === 'All' ? 'Overview' : currentRestaurant}
                     </h1>
                     <p className="text-gray-500 mt-1">
                         {currentRestaurant === 'All' ? 'Manage all your menus in one place.' : `Manage items for ${currentRestaurant}.`}
                     </p>
                 </div>
-                <Link href="/admin/add-item">
-                    <Button className="shadow-lg hover:shadow-xl transition-all duration-300">
-                        <Plus className="mr-2 h-4 w-4" /> Add New Item
-                    </Button>
-                </Link>
             </div>
 
             {/* Stats Cards */}

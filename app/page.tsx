@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-8 text-center bg-gray-50">
-      <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-4">
+    <div className="flex flex-col items-center justify-center min-h-screen p-6 text-center bg-gray-50">
+      <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 text-gray-900">
         NazARa
       </h1>
-      <p className="text-xl text-muted-foreground mb-8">
+      <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-md mx-auto">
         The Future of Dining. Scan. View. Taste.
       </p>
 

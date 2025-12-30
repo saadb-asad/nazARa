@@ -113,7 +113,7 @@ export default function RestaurantsPage() {
     return (
         <div className="flex min-h-screen bg-gray-50/50">
             <SideNav />
-            <div className="flex-1 md:ml-64 p-8">
+            <div className="flex-1 md:ml-72 p-8 pt-24 md:pt-8">
                 <div className="flex justify-between items-center mb-8">
                     <div>
                         <h1 className="text-3xl font-bold tracking-tight text-gray-900">Restaurant Management</h1>

@@ -54,66 +54,89 @@
 }
 
 :root {
-  --background: 210 40% 98%;
-  --foreground: 222.2 84% 4.9%;
+  /* Day Mode: Light Beige Background, Dark Blue Primary */
+  --background: 45 20% 91%;
+  /* #EFECE3 */
+  --foreground: 205 100% 6%;
+  /* #00171F */
 
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
+  --card: 45 20% 95%;
+  /* Slightly lighter than bg */
+  --card-foreground: 205 100% 6%;
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
+  --popover: 45 20% 95%;
+  --popover-foreground: 205 100% 6%;
 
-  /* Primary Red */
-  --primary: 354 85% 55%;
-  --primary-foreground: 0 0% 100%;
+  /* Primary: Dark Blue */
+  --primary: 205 100% 6%;
+  /* #00171F */
+  --primary-foreground: 45 20% 91%;
+  /* Light Beige Text on Dark Button */
 
-  --secondary: 0 0% 96%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 45 15% 85%;
+  --secondary-foreground: 205 100% 6%;
 
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
+  --muted: 45 15% 85%;
+  --muted-foreground: 205 40% 40%;
 
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
+  /* Accent: Bright Yellow */
+  --accent: 43 100% 51%;
+  /* #FFB703 */
+  --accent-foreground: 205 100% 6%;
 
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
+  /* Sidebar Variables - Day Mode */
+  /* User requested "darker shade than the background" */
+  /* Background is 45 20% 91% (#EFECE3). Let's go darker beige. */
+  --sidebar: 45 20% 86%;     /* #DBD7CD */
+  --sidebar-foreground: 205 100% 6%; /* Dark Text */
+  --sidebar-hover: 45 20% 80%; /* Even darker for hover */
 
-  --border: 220 13% 91%;
-  --input: 220 13% 91%;
-  --ring: 354 85% 55%;
+  --border: 205 20% 80%;
+  --input: 205 20% 80%;
+  --ring: 205 100% 6%;
 
   --radius: 1rem;
 }
 
 .dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
+  /* Night Mode: Dark Blue Background, Light Beige Text */
+  --background: 205 100% 6%;
+  /* #00171F */
+  --foreground: 45 20% 91%;
+  /* #EFECE3 */
 
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
+  --card: 205 80% 8%;
+  /* Slightly lighter dark */
+  --card-foreground: 45 20% 91%;
 
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
+  --popover: 205 100% 6%;
+  --popover-foreground: 45 20% 91%;
 
-  --primary: 354 85% 55%;
-  --primary-foreground: 222.2 47.4% 11.2%;
+  /* Primary Button in Dark Mode: Use Yellow Accent to Pop? 
+     Or keep Dark Blue (but give it a border)? 
+     Let's use the Bright Yellow as Primary in Dark Mode so it is visible. */
+  --primary: 43 100% 51%;
+  /* #FFB703 */
+  --primary-foreground: 205 100% 6%;
+  /* Dark Text on Yellow Button */
 
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
+  --secondary: 205 40% 15%;
+  --secondary-foreground: 45 20% 91%;
 
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
+  --muted: 205 40% 15%;
+  --muted-foreground: 45 10% 60%;
 
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
+  --accent: 43 100% 51%;
+  --accent-foreground: 205 100% 6%;
 
   --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive-foreground: 45 20% 91%;
 
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 354 85% 55%;
+  --border: 205 40% 20%;
+  --input: 205 40% 20%;
+  --ring: 43 100% 51%;
 }
 
 @layer base {
@@ -124,5 +147,8 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+    /* Dotted Background inspired by React Bits */
+    background-image: radial-gradient(hsl(var(--foreground) / 0.1) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 }
