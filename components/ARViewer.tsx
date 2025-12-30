@@ -3,25 +3,12 @@
 import { useEffect, useRef } from 'react'
 import '@google/model-viewer/lib/model-viewer'
 
-declare global {
-    namespace JSX {
-        interface IntrinsicElements {
-            'model-viewer': any
-        }
-    }
-}
-
-interface ARViewerProps {
-    src: string
-    poster?: string
-    alt: string
-}
-
 export default function ARViewer({ src, poster, alt }: ARViewerProps) {
     const viewerRef = useRef<any>(null)
 
     return (
         <div className="w-full h-[400px] bg-gray-50 rounded-xl overflow-hidden relative">
+            {/* @ts-expect-error - model-viewer is a custom element */}
             <model-viewer
                 ref={viewerRef}
                 src={src}
