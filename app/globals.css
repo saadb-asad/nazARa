@@ -54,89 +54,68 @@
 }
 
 :root {
-  /* Day Mode: Light Beige Background, Dark Blue Primary */
-  --background: 45 20% 91%;
-  /* #EFECE3 */
-  --foreground: 205 100% 6%;
-  /* #00171F */
+  /* Default Theme (NazARa 2.0 Dark Mode) */
+  /* Background: Deep Slate #1A1A23 */
+  --background: 240 15% 12%;
+  --foreground: 0 0% 100%;
 
-  --card: 45 20% 95%;
-  /* Slightly lighter than bg */
-  --card-foreground: 205 100% 6%;
+  /* Card: Slightly lighter #23232F */
+  --card: 240 15% 16%;
+  --card-foreground: 0 0% 100%;
 
-  --popover: 45 20% 95%;
-  --popover-foreground: 205 100% 6%;
+  --popover: 240 15% 16%;
+  --popover-foreground: 0 0% 100%;
 
-  /* Primary: Dark Blue */
-  --primary: 205 100% 6%;
-  /* #00171F */
-  --primary-foreground: 45 20% 91%;
-  /* Light Beige Text on Dark Button */
+  /* Primary: Purple #6C5DD3 */
+  --primary: 248 57% 60%;
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 45 15% 85%;
-  --secondary-foreground: 205 100% 6%;
+  /* Secondary: Darker/lighter accents */
+  --secondary: 240 15% 20%;
+  --secondary-foreground: 0 0% 100%;
 
-  --muted: 45 15% 85%;
-  --muted-foreground: 205 40% 40%;
+  --muted: 240 15% 20%;
+  --muted-foreground: 240 5% 65%;
 
-  /* Accent: Bright Yellow */
-  --accent: 43 100% 51%;
-  /* #FFB703 */
-  --accent-foreground: 205 100% 6%;
+  --accent: 248 57% 60%;
+  --accent-foreground: 0 0% 100%;
 
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  /* Sidebar Variables - Day Mode */
-  /* User requested "darker shade than the background" */
-  /* Background is 45 20% 91% (#EFECE3). Let's go darker beige. */
-  --sidebar: 45 20% 86%;     /* #DBD7CD */
-  --sidebar-foreground: 205 100% 6%; /* Dark Text */
-  --sidebar-hover: 45 20% 80%; /* Even darker for hover */
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
 
-  --border: 205 20% 80%;
-  --input: 205 20% 80%;
-  --ring: 205 100% 6%;
+  --border: 240 15% 20%;
+  --input: 240 15% 20%;
+  --ring: 248 57% 60%;
 
   --radius: 1rem;
+
+  /* Sidebar specific overrides */
+  --sidebar: 240 15% 12%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-hover: 240 15% 16%;
 }
 
 .dark {
-  /* Night Mode: Dark Blue Background, Light Beige Text */
-  --background: 205 100% 6%;
-  /* #00171F */
-  --foreground: 45 20% 91%;
-  /* #EFECE3 */
-
-  --card: 205 80% 8%;
-  /* Slightly lighter dark */
-  --card-foreground: 45 20% 91%;
-
-  --popover: 205 100% 6%;
-  --popover-foreground: 45 20% 91%;
-
-  /* Primary Button in Dark Mode: Use Yellow Accent to Pop? 
-     Or keep Dark Blue (but give it a border)? 
-     Let's use the Bright Yellow as Primary in Dark Mode so it is visible. */
-  --primary: 43 100% 51%;
-  /* #FFB703 */
-  --primary-foreground: 205 100% 6%;
-  /* Dark Text on Yellow Button */
-
-  --secondary: 205 40% 15%;
-  --secondary-foreground: 45 20% 91%;
-
-  --muted: 205 40% 15%;
-  --muted-foreground: 45 10% 60%;
-
-  --accent: 43 100% 51%;
-  --accent-foreground: 205 100% 6%;
-
+  /* Inherit same values since default is now dark */
+  --background: 240 15% 12%;
+  --foreground: 0 0% 100%;
+  --card: 240 15% 16%;
+  --card-foreground: 0 0% 100%;
+  --popover: 240 15% 16%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 248 57% 60%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 15% 20%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 240 15% 20%;
+  --muted-foreground: 240 5% 65%;
+  --accent: 248 57% 60%;
+  --accent-foreground: 0 0% 100%;
   --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 45 20% 91%;
-
-  --border: 205 40% 20%;
-  --input: 205 40% 20%;
-  --ring: 43 100% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 15% 20%;
+  --input: 240 15% 20%;
+  --ring: 248 57% 60%;
 }
 
 @layer base {
