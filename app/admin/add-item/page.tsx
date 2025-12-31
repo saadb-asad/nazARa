@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, Suspense } from 'react'
 import { supabase } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -14,7 +14,7 @@ import { cn } from '@/lib/utils'
 import { SideNav } from '@/components/admin/SideNav'
 import Link from 'next/link'
 
-export default function AddItemPage() {
+function AddItemContent() {
     const [loading, setLoading] = useState(false)
     const [uploadProgress, setUploadProgress] = useState(0)
 
@@ -274,5 +274,13 @@ export default function AddItemPage() {
                 </div>
             </div>
         </div>
+    )
+}
+
+export default function AddItemPage() {
+    return (
+        <Suspense fallback={<div className="flex items-center justify-center min-h-screen"><Loader2 className="h-8 w-8 animate-spin" /></div>}>
+            <AddItemContent />
+        </Suspense>
     )
 }
