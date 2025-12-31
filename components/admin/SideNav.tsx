@@ -1,9 +1,9 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Suspense } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { LayoutDashboard, LogOut, QrCode as QrIcon, MapPin, Store, Users, Menu } from 'lucide-react'
+import { LayoutDashboard, LogOut, QrCode as QrIcon, MapPin, Store, Users, Menu, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { supabase } from '@/lib/supabase'
 import { ModeToggle } from '@/components/mode-toggle'
@@ -14,7 +14,7 @@ interface Restaurant {
     name: string
 }
 
-export function SideNav() {
+function SideNavContent() {
     const router = useRouter()
     const searchParams = useSearchParams()
     const pathname = usePathname()
@@ -225,5 +225,17 @@ export function SideNav() {
                 </Button>
             </div>
         </>
+    )
+}
+
+export function SideNav() {
+    return (
+        <Suspense fallback={
+            <div className="hidden md:flex w-64 h-[calc(100vh-2rem)] m-4 bg-white dark:bg-card shadow-2xl fixed left-0 top-0 items-center justify-center rounded-2xl border border-gray-100 dark:border-gray-800">
+                <Loader2 className="h-8 w-8 animate-spin text-primary" />
+            </div>
+        }>
+            <SideNavContent />
+        </Suspense>
     )
 }
