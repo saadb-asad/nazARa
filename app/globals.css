@@ -55,8 +55,10 @@
 
 :root {
   /* Light Mode (Clean & Crisp) */
-  --background: 0 0% 100%; /* #FFFFFF */
-  --foreground: 222.2 84% 4.9%; /* Slate 950 */
+  --background: 0 0% 100%;
+  /* #FFFFFF */
+  --foreground: 222.2 84% 4.9%;
+  /* Slate 950 */
 
   --card: 0 0% 100%;
   --card-foreground: 222.2 84% 4.9%;
@@ -98,45 +100,45 @@
 }
 
 .dark {
-  /* Dark Mode (NazARa 2.0 Deep Slate) */
-  /* Background: Deep Slate #1A1A23 */
-  --background: 240 15% 12%; 
+  /* Dark Mode (NazARa 2.0 Deep Slate - Refined Darker) */
+  /* Background: Darker Deep Slate ~ #0B0B14 - Less distracting, higher contrast */
+  --background: 240 10% 4%;
   --foreground: 0 0% 100%;
 
-  /* Card: Slightly lighter #23232F */
-  --card: 240 15% 16%;
+  /* Card: Slightly lighter #1A1A23 (Original Background Color) */
+  --card: 240 15% 12%;
   --card-foreground: 0 0% 100%;
 
-  --popover: 240 15% 16%;
+  --popover: 240 15% 12%;
   --popover-foreground: 0 0% 100%;
 
   --primary: 248 57% 60%;
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 240 15% 20%;
+  --secondary: 240 15% 16%;
   --secondary-foreground: 0 0% 100%;
 
-  --muted: 240 15% 20%;
+  --muted: 240 15% 16%;
   --muted-foreground: 240 5% 65%;
 
-  --accent: 240 15% 20%;
+  --accent: 240 15% 16%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 240 15% 20%;
-  --input: 240 15% 20%;
+  --border: 240 15% 16%;
+  --input: 240 15% 16%;
   --ring: 248 57% 60%;
 
-    /* Sidebar specific (Dark) */
-  --sidebar: 240 15% 12%;
+  /* Sidebar specific (Dark) */
+  --sidebar: 240 10% 4%;
   --sidebar-foreground: 0 0% 100%;
   --sidebar-primary: 248 57% 60%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 240 15% 16%;
+  --sidebar-accent: 240 15% 12%;
   --sidebar-accent-foreground: 0 0% 100%;
-  --sidebar-border: 240 15% 20%;
+  --sidebar-border: 240 15% 16%;
   --sidebar-ring: 248 57% 60%;
 }
 
