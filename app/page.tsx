@@ -1,4 +1,6 @@
 'use client'
+// Re-triggering deployment for NazARa 2.0 Landing Page
+
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
