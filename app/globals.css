@@ -54,9 +54,53 @@
 }
 
 :root {
-  /* Default Theme (NazARa 2.0 Dark Mode) */
+  /* Light Mode (Clean & Crisp) */
+  --background: 0 0% 100%; /* #FFFFFF */
+  --foreground: 222.2 84% 4.9%; /* Slate 950 */
+
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+
+  /* Primary: Purple #6C5DD3 */
+  --primary: 248 57% 60%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 248 57% 60%;
+
+  --radius: 1rem;
+
+  /* Sidebar specific (Light) */
+  --sidebar: 0 0% 98%;
+  --sidebar-foreground: 240 5.9% 10%;
+  --sidebar-primary: 248 57% 60%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 248 57% 60%;
+}
+
+.dark {
+  /* Dark Mode (NazARa 2.0 Deep Slate) */
   /* Background: Deep Slate #1A1A23 */
-  --background: 240 15% 12%;
+  --background: 240 15% 12%; 
   --foreground: 0 0% 100%;
 
   /* Card: Slightly lighter #23232F */
@@ -66,18 +110,16 @@
   --popover: 240 15% 16%;
   --popover-foreground: 0 0% 100%;
 
-  /* Primary: Purple #6C5DD3 */
   --primary: 248 57% 60%;
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Darker/lighter accents */
   --secondary: 240 15% 20%;
   --secondary-foreground: 0 0% 100%;
 
   --muted: 240 15% 20%;
   --muted-foreground: 240 5% 65%;
 
-  --accent: 248 57% 60%;
+  --accent: 240 15% 20%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 62.8% 30.6%;
@@ -87,35 +129,15 @@
   --input: 240 15% 20%;
   --ring: 248 57% 60%;
 
-  --radius: 1rem;
-
-  /* Sidebar specific overrides */
+    /* Sidebar specific (Dark) */
   --sidebar: 240 15% 12%;
   --sidebar-foreground: 0 0% 100%;
-  --sidebar-hover: 240 15% 16%;
-}
-
-.dark {
-  /* Inherit same values since default is now dark */
-  --background: 240 15% 12%;
-  --foreground: 0 0% 100%;
-  --card: 240 15% 16%;
-  --card-foreground: 0 0% 100%;
-  --popover: 240 15% 16%;
-  --popover-foreground: 0 0% 100%;
-  --primary: 248 57% 60%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 240 15% 20%;
-  --secondary-foreground: 0 0% 100%;
-  --muted: 240 15% 20%;
-  --muted-foreground: 240 5% 65%;
-  --accent: 248 57% 60%;
-  --accent-foreground: 0 0% 100%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 240 15% 20%;
-  --input: 240 15% 20%;
-  --ring: 248 57% 60%;
+  --sidebar-primary: 248 57% 60%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 240 15% 16%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 240 15% 20%;
+  --sidebar-ring: 248 57% 60%;
 }
 
 @layer base {
