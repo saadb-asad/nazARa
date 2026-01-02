@@ -66,8 +66,9 @@ export default function Home() {
             manualMode={false}
             blurAmount={10}
             borderColor="#6C5DD3"
-            animationDuration={0.4}
-            pauseBetweenAnimations={0.5}
+            animationDuration={0.5}
+            pauseBetweenAnimations={1.0}
+            loop={false}
           />
         </div>
 

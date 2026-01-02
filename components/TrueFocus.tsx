@@ -12,6 +12,7 @@ interface TrueFocusProps {
     glowColor?: string;
     animationDuration?: number;
     pauseBetweenAnimations?: number;
+    loop?: boolean;
 }
 
 interface FocusRect {
@@ -29,7 +30,8 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
     borderColor = 'green',
     glowColor = 'rgba(0, 255, 0, 0.6)',
     animationDuration = 0.5,
-    pauseBetweenAnimations = 1
+    pauseBetweenAnimations = 1,
+    loop = true
 }) => {
     const words = sentence.split(separator);
     const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -42,14 +44,20 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
         if (!manualMode) {
             const interval = setInterval(
                 () => {
-                    setCurrentIndex(prev => (prev + 1) % words.length);
+                    setCurrentIndex(prev => {
+                        if (!loop && prev === words.length - 1) {
+                            clearInterval(interval);
+                            return prev;
+                        }
+                        return (prev + 1) % words.length;
+                    });
                 },
                 (animationDuration + pauseBetweenAnimations) * 1000
             );
 
             return () => clearInterval(interval);
         }
-    }, [manualMode, animationDuration, pauseBetweenAnimations, words.length]);
+    }, [manualMode, animationDuration, pauseBetweenAnimations, words.length, loop]);
 
     useEffect(() => {
         if (currentIndex === null || currentIndex === -1) return;
