@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Smartphone, Zap, Box, Star } from "lucide-react";
 import { useState, useEffect } from 'react';
+import TrueFocus from "@/components/TrueFocus";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -59,15 +60,16 @@ export default function Home() {
         </div>
 
         {/* Blur Text Animation */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6 pb-2 leading-tight">
-          <span className="block md:inline bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 animate-blur-in">
-            Dining,
-          </span>{" "}
-          <br className="md:hidden" />
-          <span className="block md:inline bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 animate-blur-in [animation-delay:200ms]">
-            Augmented.
-          </span>
-        </h1>
+        <div className="mb-6 pb-2">
+          <TrueFocus
+            sentence="Dining Augmented"
+            manualMode={false}
+            blurAmount={10}
+            borderColor="#6C5DD3"
+            animationDuration={0.4}
+            pauseBetweenAnimations={0.5}
+          />
+        </div>
 
         <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
           Transform your restaurant's menu into an immersive 3D experience.
