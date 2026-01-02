@@ -36,6 +36,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
     const words = sentence.split(separator);
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [lastActiveIndex, setLastActiveIndex] = useState<number | null>(null);
+    const [isFinished, setIsFinished] = useState(false);
     const containerRef = useRef<HTMLDivElement | null>(null);
     const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
     const [focusRect, setFocusRect] = useState<FocusRect>({ x: 0, y: 0, width: 0, height: 0 });
@@ -58,6 +59,16 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
             return () => clearInterval(interval);
         }
     }, [manualMode, animationDuration, pauseBetweenAnimations, words.length, loop]);
+
+    // Detect when animation finishes
+    useEffect(() => {
+        if (!loop && currentIndex === words.length - 1 && !isFinished) {
+            const timer = setTimeout(() => {
+                setIsFinished(true);
+            }, (animationDuration + pauseBetweenAnimations) * 1000);
+            return () => clearTimeout(timer);
+        }
+    }, [currentIndex, loop, isFinished, animationDuration, pauseBetweenAnimations, words.length]);
 
     useEffect(() => {
         if (currentIndex === null || currentIndex === -1) return;
@@ -95,22 +106,24 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
         >
             {words.map((word, index) => {
                 const isActive = index === currentIndex;
+                const shouldBlur = !isActive && !isFinished; // Unblur everything if finished, otherwise only active is unblurred
+
                 return (
                     <span
                         key={index}
                         ref={el => {
                             wordRefs.current[index] = el;
                         }}
-                        className="relative text-5xl md:text-7xl lg:text-8xl font-black cursor-pointer bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50"
+                        className="relative text-4xl md:text-5xl lg:text-6xl font-black cursor-pointer bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50"
                         style={
                             {
                                 filter: manualMode
                                     ? isActive
                                         ? `blur(0px)`
                                         : `blur(${blurAmount}px)`
-                                    : isActive
-                                        ? `blur(0px)`
-                                        : `blur(${blurAmount}px)`,
+                                    : shouldBlur
+                                        ? `blur(${blurAmount}px)`
+                                        : `blur(0px)`,
                                 transition: `filter ${animationDuration}s ease`,
                                 outline: 'none',
                                 userSelect: 'none'
