@@ -133,7 +133,7 @@ export default function Home() {
                 e.preventDefault();
                 const element = document.getElementById('features');
                 if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
               }}
               className="h-12 px-8 sm:h-14 sm:px-12 rounded-full bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 text-white font-medium text-base sm:text-lg transition-all hover:scale-105 active:scale-95 min-w-[180px] sm:min-w-[200px] flex items-center justify-center"
@@ -147,7 +147,7 @@ export default function Home() {
       </div>
 
       {/* Feature Grid - Below Fold / Bottom */}
-      <section id="features" className="relative z-10 w-full bg-black/20 backdrop-blur-xl border-t border-white/5 py-12 sm:py-20 scroll-mt-20 min-h-screen flex items-center justify-center">
+      <section id="features" className="relative z-10 w-full bg-black/20 backdrop-blur-xl border-t border-white/5 py-12 sm:py-20 min-h-screen flex items-center justify-center">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto px-6 w-full animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-100">
           {/* Card 1 */}
           <GlareHover
