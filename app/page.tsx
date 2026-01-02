@@ -45,11 +45,11 @@ export default function Home() {
           beamWidth={2}
           beamHeight={15}
           beamNumber={12}
-          lightColor="#ffffff"
+          lightColor="#6D28D9"
           speed={2}
           noiseIntensity={1.75}
           scale={0.2}
-          rotation={0}
+          rotation={45}
         />
         {/* Gradient fade at bottom of beams to blend with dark bg */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#1A1A23]" />
