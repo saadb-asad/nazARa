@@ -80,8 +80,8 @@ export default function Home() {
               manualMode={false}
               blurAmount={10}
               borderColor="#6C5DD3"
-              animationDuration={0.3}
-              pauseBetweenAnimations={0.6}
+              animationDuration={isMobile ? 0.5 : 0.3}
+              pauseBetweenAnimations={isMobile ? 1 : 0.6}
               loop={isMobile}
             />
           </div>
