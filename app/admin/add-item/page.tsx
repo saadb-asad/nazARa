@@ -108,7 +108,7 @@ function AddItemContent() {
     }
 
     return (
-        <div className="flex min-h-screen bg-gray-50/50">
+        <div className="flex min-h-screen bg-background">
             <SideNav />
             {/* Main Content Area - Full view height minus padding */}
             <div className="flex-1 md:ml-64 p-4 md:p-6 h-screen flex flex-col box-border">
