@@ -61,18 +61,18 @@ export default function Home() {
         {/* Navbar */}
         {/* Navbar */}
         <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-          <nav className="flex items-center justify-between px-6 py-3 w-full max-w-4xl bg-[#1A1A23]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg ring-1 ring-white/5 animate-in fade-in slide-in-from-top-4 duration-700">
+          <nav className="flex items-center justify-between px-4 py-2 sm:px-6 sm:py-3 w-full max-w-4xl bg-[#1A1A23]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg ring-1 ring-white/5 animate-in fade-in slide-in-from-top-4 duration-700">
 
             {/* Left: Menu Icon */}
             <div className="flex items-center justify-start flex-1 text-white hover:text-indigo-400 cursor-pointer transition-colors">
-              <Menu className="h-6 w-6" />
+              <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
             </div>
 
             {/* Center: Brand (Logo + Text) */}
             <div className="flex items-center justify-center flex-1">
               <div className="flex items-center gap-2">
-                <Zap className="h-5 w-5 text-indigo-500 fill-indigo-500" />
-                <span className="text-xl font-bold tracking-tight text-white">
+                <Zap className="h-4 w-4 sm:h-5 sm:w-5 text-indigo-500 fill-indigo-500" />
+                <span className="text-lg sm:text-xl font-bold tracking-tight text-white">
                   NAZ<span className="text-indigo-500">AR</span>A
                 </span>
               </div>
@@ -81,7 +81,7 @@ export default function Home() {
             {/* Right: CTA Button */}
             <div className="flex items-center justify-end flex-1">
               <Link href="/admin/login">
-                <Button className="h-9 px-6 rounded-lg bg-[#6C5DD3] hover:bg-[#5b4ec2] text-white font-medium text-sm transition-all shadow-md shadow-indigo-500/20">
+                <Button className="h-8 px-4 sm:h-9 sm:px-6 rounded-lg bg-[#6C5DD3] hover:bg-[#5b4ec2] text-white font-medium text-xs sm:text-sm transition-all shadow-md shadow-indigo-500/20">
                   Get Started
                 </Button>
               </Link>
@@ -106,16 +106,16 @@ export default function Home() {
             />
           </div>
 
-          <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed tracking-wide font-[family-name:var(--font-geist-sans)] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
+          <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed tracking-wide font-[family-name:var(--font-geist-sans)] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
             Transform your restaurant's menu into an immersive 3D experience.
             Let customers <span className="text-white font-medium">Scan</span>, <span className="text-white font-medium">View</span>, and <span className="text-white font-medium">Taste</span> the future.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700 relative z-20 items-center justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700 relative z-20 items-center justify-center">
 
             {/* Get Started Button - Sleek & Sized */}
             <Link href="/admin/login">
-              <Button className="h-14 px-12 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white font-medium text-lg shadow-xl shadow-indigo-500/30 transition-all hover:scale-105 active:scale-95 group border-0 min-w-[200px]">
+              <Button className="h-12 px-8 sm:h-14 sm:px-12 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white font-medium text-base sm:text-lg shadow-xl shadow-indigo-500/30 transition-all hover:scale-105 active:scale-95 group border-0 min-w-[180px] sm:min-w-[200px]">
                 <ShinyText
                   text="Get Started"
                   disabled={false}
@@ -124,7 +124,7 @@ export default function Home() {
                   color="#ffffff"
                   shineColor="#b0b0b0"
                 />
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
 
@@ -137,7 +137,7 @@ export default function Home() {
                   element.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="h-14 px-12 rounded-full bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 text-white font-medium text-lg transition-all hover:scale-105 active:scale-95 min-w-[200px] flex items-center justify-center"
+              className="h-12 px-8 sm:h-14 sm:px-12 rounded-full bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 text-white font-medium text-base sm:text-lg transition-all hover:scale-105 active:scale-95 min-w-[180px] sm:min-w-[200px] flex items-center justify-center"
             >
               Learn More
             </button>
@@ -148,8 +148,8 @@ export default function Home() {
       </div>
 
       {/* Feature Grid - Below Fold / Bottom */}
-      <section id="features" className="relative z-10 w-full bg-black/20 backdrop-blur-xl border-t border-white/5 py-20 scroll-mt-20 min-h-screen flex items-center justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6 w-full animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-100">
+      <section id="features" className="relative z-10 w-full bg-black/20 backdrop-blur-xl border-t border-white/5 py-12 sm:py-20 scroll-mt-20 min-h-screen flex items-center justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto px-6 w-full animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-100">
           {/* Card 1 */}
           <GlareHover
             glareColor="#ffffff"
@@ -223,24 +223,24 @@ export default function Home() {
       </section>
 
       {/* About & Contact Section */}
-      <section id="contact" className="relative z-10 w-full bg-[#15151e] border-t border-white/5 py-20">
-        <div className="max-w-6xl mx-auto px-6 w-full flex flex-col md:flex-row gap-12">
+      <section id="contact" className="relative z-10 w-full bg-[#15151e] border-t border-white/5 py-12 sm:py-20">
+        <div className="max-w-6xl mx-auto px-6 w-full flex flex-col md:flex-row gap-8 md:gap-12">
 
           {/* About Us */}
           <div className="flex-1 space-y-6">
-            <h2 className="text-3xl font-bold tracking-tight text-white mb-6">About Us</h2>
-            <p className="text-gray-400 leading-relaxed">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-6">About Us</h2>
+            <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
               NazARa is pioneering the future of dining by bridging the gap between physical menus and digital experiences. We believe that food should be experienced before it's even ordered. Our mission is to empower restaurants with cutting-edge AR technology that is accessible, app-less, and incredibly engaging.
             </p>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
               Founded by a team of passionate developers and foodies, we are dedicated to transforming how the world eats, one 3D model at a time.
             </p>
           </div>
 
           {/* Contact Us */}
-          <div className="flex-1 space-y-6 bg-white/5 p-8 rounded-2xl border border-white/10">
-            <h2 className="text-3xl font-bold tracking-tight text-white mb-6">Contact Us</h2>
-            <p className="text-gray-400 mb-6">
+          <div className="flex-1 space-y-6 bg-white/5 p-6 sm:p-8 rounded-2xl border border-white/10">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-6">Contact Us</h2>
+            <p className="text-sm sm:text-base text-gray-400 mb-6">
               Ready to transform your menu? Get in touch with our team for a demo or custom integration.
             </p>
 
