@@ -82,7 +82,7 @@ export default function Home() {
               borderColor="#6C5DD3"
               animationDuration={isMobile ? 0.5 : 0.3}
               pauseBetweenAnimations={isMobile ? 1 : 0.6}
-              loop={isMobile}
+              loop={false}
             />
           </div>
 
