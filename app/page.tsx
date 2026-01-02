@@ -8,8 +8,8 @@ import { ArrowRight, Smartphone, Zap, Box, Star } from "lucide-react";
 import { useState, useEffect } from 'react';
 import TrueFocus from "@/components/TrueFocus";
 import ShinyText from "@/components/ShinyText";
-import Iridescence from "@/components/Iridescence";
 import GlareHover from "@/components/GlareHover";
+import Beams from "@/components/Beams";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -39,14 +39,20 @@ export default function Home() {
       onMouseMove={handleMouseMove}
     >
 
-      {/* Iridescence Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
-        <Iridescence
-          color={[1, 1, 1]}
-          mouseReact={false}
-          amplitude={0.1}
-          speed={1.0}
+      {/* Beams Background - Top Half Only */}
+      <div className="fixed inset-0 z-0 pointer-events-none h-[50vh] opacity-60">
+        <Beams
+          beamWidth={2}
+          beamHeight={15}
+          beamNumber={12}
+          lightColor="#ffffff"
+          speed={2}
+          noiseIntensity={1.75}
+          scale={0.2}
+          rotation={0}
         />
+        {/* Gradient fade at bottom of beams to blend with dark bg */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1A1A23]" />
       </div>
 
       {/* Hero Section */}
@@ -85,9 +91,11 @@ export default function Home() {
             Let customers <span className="text-white font-medium">Scan</span>, <span className="text-white font-medium">View</span>, and <span className="text-white font-medium">Taste</span> the future.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700 relative z-20">
+          <div className="flex flex-col sm:flex-row gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700 relative z-20 items-center justify-center">
+
+            {/* Get Started Button - Sleek & Sized */}
             <Link href="/admin/login">
-              <Button className="h-16 px-10 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white font-medium text-lg shadow-xl shadow-indigo-500/30 transition-all hover:scale-105 active:scale-95 group border-0">
+              <Button className="h-14 px-12 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white font-medium text-lg shadow-xl shadow-indigo-500/30 transition-all hover:scale-105 active:scale-95 group border-0 min-w-[200px]">
                 <ShinyText
                   text="Get Started"
                   disabled={false}
@@ -99,13 +107,21 @@ export default function Home() {
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
+
+            {/* Learn More Button - Dark Blurred */}
+            <Link href="#features">
+              <Button variant="outline" className="h-14 px-12 rounded-full bg-white/5 backdrop-blur-md border-white/10 hover:bg-white/10 text-white font-medium text-lg transition-all hover:scale-105 active:scale-95 min-w-[200px]">
+                Learn More
+              </Button>
+            </Link>
+
           </div>
         </div>
 
       </div>
 
       {/* Feature Grid - Below Fold / Bottom */}
-      <section className="relative z-10 w-full bg-black/20 backdrop-blur-xl border-t border-white/5 py-20">
+      <section id="features" className="relative z-10 w-full bg-black/20 backdrop-blur-xl border-t border-white/5 py-20 scroll-mt-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6 w-full animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-100">
           {/* Card 1 */}
           <GlareHover
