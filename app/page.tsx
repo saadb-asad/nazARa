@@ -60,7 +60,7 @@ export default function Home() {
         </div>
 
         {/* Blur Text Animation */}
-        <div className="mb-6 pb-2">
+        <div className="mb-12 pb-4">
           <TrueFocus
             sentence="Dining Augmented"
             manualMode={false}
