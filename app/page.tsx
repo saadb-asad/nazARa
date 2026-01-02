@@ -55,40 +55,39 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#1A1A23]" />
       </div>
 
+      {/* Navbar */}
+      <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+        <nav className="flex items-center justify-between px-4 py-2 sm:px-6 sm:py-3 w-full max-w-4xl bg-[#1A1A23]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg ring-1 ring-white/5 animate-in fade-in slide-in-from-top-4 duration-700">
+
+          {/* Left: Menu Icon */}
+          <div className="flex items-center justify-start flex-1 text-white hover:text-indigo-400 cursor-pointer transition-colors">
+            <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
+          </div>
+
+          {/* Center: Brand (Logo + Text) */}
+          <div className="flex items-center justify-center flex-1">
+            <div className="flex items-center gap-2">
+              <Zap className="h-4 w-4 sm:h-5 sm:w-5 text-indigo-500 fill-indigo-500" />
+              <span className="text-lg sm:text-xl font-bold tracking-tight text-white">
+                NAZ<span className="text-indigo-500">AR</span>A
+              </span>
+            </div>
+          </div>
+
+          {/* Right: CTA Button */}
+          <div className="flex items-center justify-end flex-1">
+            <Link href="/admin/login">
+              <Button className="h-8 px-4 sm:h-9 sm:px-6 rounded-lg bg-[#6C5DD3] hover:bg-[#5b4ec2] text-white font-medium text-xs sm:text-sm transition-all shadow-md shadow-indigo-500/20">
+                Get Started
+              </Button>
+            </Link>
+          </div>
+
+        </nav>
+      </div>
+
       {/* Hero Section */}
       <div className="relative z-10 flex flex-col min-h-screen">
-
-        {/* Navbar */}
-        {/* Navbar */}
-        <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-          <nav className="flex items-center justify-between px-4 py-2 sm:px-6 sm:py-3 w-full max-w-4xl bg-[#1A1A23]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg ring-1 ring-white/5 animate-in fade-in slide-in-from-top-4 duration-700">
-
-            {/* Left: Menu Icon */}
-            <div className="flex items-center justify-start flex-1 text-white hover:text-indigo-400 cursor-pointer transition-colors">
-              <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
-            </div>
-
-            {/* Center: Brand (Logo + Text) */}
-            <div className="flex items-center justify-center flex-1">
-              <div className="flex items-center gap-2">
-                <Zap className="h-4 w-4 sm:h-5 sm:w-5 text-indigo-500 fill-indigo-500" />
-                <span className="text-lg sm:text-xl font-bold tracking-tight text-white">
-                  NAZ<span className="text-indigo-500">AR</span>A
-                </span>
-              </div>
-            </div>
-
-            {/* Right: CTA Button */}
-            <div className="flex items-center justify-end flex-1">
-              <Link href="/admin/login">
-                <Button className="h-8 px-4 sm:h-9 sm:px-6 rounded-lg bg-[#6C5DD3] hover:bg-[#5b4ec2] text-white font-medium text-xs sm:text-sm transition-all shadow-md shadow-indigo-500/20">
-                  Get Started
-                </Button>
-              </Link>
-            </div>
-
-          </nav>
-        </div>
 
         {/* Hero Content - Centered */}
         <div className="flex-1 flex flex-col items-center justify-center text-center px-4 pb-20">
