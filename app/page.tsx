@@ -4,7 +4,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Smartphone, Zap, Box, Star } from "lucide-react";
+import { ArrowRight, Smartphone, Zap, Box, Star, Menu } from "lucide-react";
 import { useState, useEffect } from 'react';
 import TrueFocus from "@/components/TrueFocus";
 import ShinyText from "@/components/ShinyText";
@@ -59,16 +59,36 @@ export default function Home() {
       <div className="relative z-10 flex flex-col min-h-screen">
 
         {/* Navbar */}
-        <nav className="flex items-center justify-between px-6 py-6 md:px-12 animate-in fade-in slide-in-from-top-4 duration-700">
-          <div className="text-2xl font-bold tracking-tighter">
-            NAZ<span className="text-indigo-500">AR</span>A
-          </div>
-          <Link href="/admin/login">
-            <Button variant="ghost" className="text-gray-300 hover:text-white hover:bg-white/10 rounded-full px-6 transition-all">
-              Admin Portal
-            </Button>
-          </Link>
-        </nav>
+        {/* Navbar */}
+        <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+          <nav className="flex items-center justify-between px-6 py-3 w-full max-w-4xl bg-[#1A1A23]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg ring-1 ring-white/5 animate-in fade-in slide-in-from-top-4 duration-700">
+
+            {/* Left: Menu Icon */}
+            <div className="flex items-center justify-start flex-1 text-white hover:text-indigo-400 cursor-pointer transition-colors">
+              <Menu className="h-6 w-6" />
+            </div>
+
+            {/* Center: Brand (Logo + Text) */}
+            <div className="flex items-center justify-center flex-1">
+              <div className="flex items-center gap-2">
+                <Zap className="h-5 w-5 text-indigo-500 fill-indigo-500" />
+                <span className="text-xl font-bold tracking-tight text-white">
+                  NAZ<span className="text-indigo-500">AR</span>A
+                </span>
+              </div>
+            </div>
+
+            {/* Right: CTA Button */}
+            <div className="flex items-center justify-end flex-1">
+              <Link href="/admin/login">
+                <Button className="h-9 px-6 rounded-lg bg-[#6C5DD3] hover:bg-[#5b4ec2] text-white font-medium text-sm transition-all shadow-md shadow-indigo-500/20">
+                  Get Started
+                </Button>
+              </Link>
+            </div>
+
+          </nav>
+        </div>
 
         {/* Hero Content - Centered */}
         <div className="flex-1 flex flex-col items-center justify-center text-center px-4 pb-20">
@@ -109,11 +129,18 @@ export default function Home() {
             </Link>
 
             {/* Learn More Button - Dark Blurred */}
-            <Link href="#features">
-              <Button variant="outline" className="h-14 px-12 rounded-full bg-white/5 backdrop-blur-md border-white/10 hover:bg-white/10 text-white font-medium text-lg transition-all hover:scale-105 active:scale-95 min-w-[200px]">
-                Learn More
-              </Button>
-            </Link>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById('features');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="h-14 px-12 rounded-full bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 text-white font-medium text-lg transition-all hover:scale-105 active:scale-95 min-w-[200px] flex items-center justify-center"
+            >
+              Learn More
+            </button>
 
           </div>
         </div>
