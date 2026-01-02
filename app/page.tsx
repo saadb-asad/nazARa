@@ -40,7 +40,7 @@ export default function Home() {
     >
 
       {/* Iridescence Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
+      <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
         <Iridescence
           color={[1, 1, 1]}
           mouseReact={false}
@@ -80,7 +80,7 @@ export default function Home() {
             />
           </div>
 
-          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
             Transform your restaurant's menu into an immersive 3D experience.
             Let customers <span className="text-white font-medium">Scan</span>, <span className="text-white font-medium">View</span>, and <span className="text-white font-medium">Taste</span> the future.
           </p>
