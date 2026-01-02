@@ -78,10 +78,10 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
         const activeRect = wordRefs.current[currentIndex]!.getBoundingClientRect();
 
         setFocusRect({
-            x: activeRect.left - parentRect.left - 4,
-            y: activeRect.top - parentRect.top - 4,
-            width: activeRect.width + 8,
-            height: activeRect.height + 8
+            x: activeRect.left - parentRect.left,
+            y: activeRect.top - parentRect.top,
+            width: activeRect.width,
+            height: activeRect.height
         });
     }, [currentIndex, words.length]);
 
@@ -114,7 +114,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
                         ref={el => {
                             wordRefs.current[index] = el;
                         }}
-                        className="relative text-4xl md:text-5xl lg:text-6xl font-black cursor-pointer bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50"
+                        className="relative text-4xl md:text-5xl lg:text-6xl font-black cursor-pointer bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 pb-2"
                         style={
                             {
                                 filter: manualMode
