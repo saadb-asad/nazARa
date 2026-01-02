@@ -8,6 +8,8 @@ import { ArrowRight, Smartphone, Zap, Box, Star } from "lucide-react";
 import { useState, useEffect } from 'react';
 import TrueFocus from "@/components/TrueFocus";
 import ShinyText from "@/components/ShinyText";
+import Iridescence from "@/components/Iridescence";
+import GlareHover from "@/components/GlareHover";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -37,15 +39,13 @@ export default function Home() {
       onMouseMove={handleMouseMove}
     >
 
-      {/* Background Gradients (Interactive Parallax) */}
+      {/* Iridescence Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div
-          className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-purple-600/20 rounded-full blur-[120px] animate-float transition-transform duration-75 ease-out"
-          style={{ transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * 20}px)` }}
-        />
-        <div
-          className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-indigo-600/20 rounded-full blur-[120px] animate-float-delayed transition-transform duration-75 ease-out"
-          style={{ transform: `translate(${mousePosition.x * -20}px, ${mousePosition.y * -20}px)` }}
+        <Iridescence
+          color={[1, 1, 1]}
+          mouseReact={false}
+          amplitude={0.1}
+          speed={1.0}
         />
       </div>
 
@@ -108,31 +108,73 @@ export default function Home() {
       <section className="relative z-10 w-full bg-black/20 backdrop-blur-xl border-t border-white/5 py-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6 w-full animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-100">
           {/* Card 1 */}
-          <div className="p-8 rounded-3xl bg-white/5 border border-white/5 shadow-sm hover:shadow-md hover:border-indigo-500/30 hover:bg-white/10 transition-all duration-300 group text-left hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Box className="text-indigo-400 h-6 w-6" />
+          <GlareHover
+            glareColor="#ffffff"
+            glareOpacity={0.15}
+            glareAngle={-30}
+            glareSize={300}
+            transitionDuration={800}
+            playOnce={false}
+            width="100%"
+            height="100%"
+            background="rgba(255, 255, 255, 0.05)"
+            borderColor="rgba(255, 255, 255, 0.05)"
+            borderRadius="1.5rem"
+          >
+            <div className="p-8 h-full flex flex-col items-start transition-all duration-300 group hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Box className="text-indigo-400 h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">3D Menu Items</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">Upload high-fidelity GLB models. Give customers a 360° view of your culinary masterpieces before they order.</p>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-white">3D Menu Items</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">Upload high-fidelity GLB models. Give customers a 360° view of your culinary masterpieces before they order.</p>
-          </div>
+          </GlareHover>
 
           {/* Card 2 */}
-          <div className="p-8 rounded-3xl bg-white/5 border border-white/5 shadow-sm hover:shadow-md hover:border-purple-500/30 hover:bg-white/10 transition-all duration-300 group text-left hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Smartphone className="text-purple-400 h-6 w-6" />
+          <GlareHover
+            glareColor="#ffffff"
+            glareOpacity={0.15}
+            glareAngle={-30}
+            glareSize={300}
+            transitionDuration={800}
+            playOnce={false}
+            width="100%"
+            height="100%"
+            background="rgba(255, 255, 255, 0.05)"
+            borderColor="rgba(255, 255, 255, 0.05)"
+            borderRadius="1.5rem"
+          >
+            <div className="p-8 h-full flex flex-col items-start transition-all duration-300 group hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Smartphone className="text-purple-400 h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">App-Less AR</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">No app download required. Built on cutting-edge WebAR technology that works directly in the browser.</p>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-white">App-Less AR</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">No app download required. Built on cutting-edge WebAR technology that works directly in the browser.</p>
-          </div>
+          </GlareHover>
 
           {/* Card 3 */}
-          <div className="p-8 rounded-3xl bg-white/5 border border-white/5 shadow-sm hover:shadow-md hover:border-pink-500/30 hover:bg-white/10 transition-all duration-300 group text-left backdrop-blur-sm hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-2xl bg-pink-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Star className="text-pink-400 h-6 w-6" />
+          <GlareHover
+            glareColor="#ffffff"
+            glareOpacity={0.15}
+            glareAngle={-30}
+            glareSize={300}
+            transitionDuration={800}
+            playOnce={false}
+            width="100%"
+            height="100%"
+            background="rgba(255, 255, 255, 0.05)"
+            borderColor="rgba(255, 255, 255, 0.05)"
+            borderRadius="1.5rem"
+          >
+            <div className="p-8 h-full flex flex-col items-start transition-all duration-300 group hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-2xl bg-pink-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Star className="text-pink-400 h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">Boost Engagement</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">Visual menus increase appetite and check sizes. Turn dining into a shareable social experience.</p>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-white">Boost Engagement</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">Visual menus increase appetite and check sizes. Turn dining into a shareable social experience.</p>
-          </div>
+          </GlareHover>
         </div>
       </section>
 
