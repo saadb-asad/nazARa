@@ -33,18 +33,18 @@ export default function Home() {
 
   return (
     <div
-      className="min-h-screen bg-[#F5F5F7] text-gray-900 overflow-hidden relative font-sans"
+      className="min-h-screen bg-[#1A1A23] text-white overflow-hidden relative selection:bg-indigo-500/30 font-sans"
       onMouseMove={handleMouseMove}
     >
 
       {/* Background Gradients (Interactive Parallax) */}
-      <div className="fixed inset-0 z-0 pointer-events-none opacity-40">
+      <div className="fixed inset-0 z-0 pointer-events-none">
         <div
-          className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-purple-400/30 rounded-full blur-[120px] animate-float transition-transform duration-75 ease-out"
+          className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-purple-600/20 rounded-full blur-[120px] animate-float transition-transform duration-75 ease-out"
           style={{ transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * 20}px)` }}
         />
         <div
-          className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-indigo-400/30 rounded-full blur-[120px] animate-float-delayed transition-transform duration-75 ease-out"
+          className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-indigo-600/20 rounded-full blur-[120px] animate-float-delayed transition-transform duration-75 ease-out"
           style={{ transform: `translate(${mousePosition.x * -20}px, ${mousePosition.y * -20}px)` }}
         />
       </div>
@@ -55,10 +55,10 @@ export default function Home() {
         {/* Navbar */}
         <nav className="flex items-center justify-between px-6 py-6 md:px-12 animate-in fade-in slide-in-from-top-4 duration-700">
           <div className="text-2xl font-bold tracking-tighter">
-            NAZ<span className="text-indigo-600">AR</span>A
+            NAZ<span className="text-indigo-500">AR</span>A
           </div>
           <Link href="/admin/login">
-            <Button variant="ghost" className="text-gray-600 hover:text-black hover:bg-black/5 rounded-full px-6 transition-all">
+            <Button variant="ghost" className="text-gray-300 hover:text-white hover:bg-white/10 rounded-full px-6 transition-all">
               Admin Portal
             </Button>
           </Link>
@@ -80,9 +80,9 @@ export default function Home() {
             />
           </div>
 
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
             Transform your restaurant's menu into an immersive 3D experience.
-            Let customers <span className="text-gray-900 font-medium">Scan</span>, <span className="text-gray-900 font-medium">View</span>, and <span className="text-gray-900 font-medium">Taste</span> the future.
+            Let customers <span className="text-white font-medium">Scan</span>, <span className="text-white font-medium">View</span>, and <span className="text-white font-medium">Taste</span> the future.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700 relative z-20">
@@ -105,33 +105,33 @@ export default function Home() {
       </div>
 
       {/* Feature Grid - Below Fold / Bottom */}
-      <section className="relative z-10 w-full bg-white/50 backdrop-blur-xl border-t border-white/20 py-20">
+      <section className="relative z-10 w-full bg-black/20 backdrop-blur-xl border-t border-white/5 py-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6 w-full animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-100">
           {/* Card 1 */}
-          <div className="p-8 rounded-3xl bg-white/60 border border-white/40 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all duration-300 group text-left hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-2xl bg-indigo-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Box className="text-indigo-600 h-6 w-6" />
+          <div className="p-8 rounded-3xl bg-white/5 border border-white/5 shadow-sm hover:shadow-md hover:border-indigo-500/30 hover:bg-white/10 transition-all duration-300 group text-left hover:-translate-y-1">
+            <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Box className="text-indigo-400 h-6 w-6" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-900">3D Menu Items</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">Upload high-fidelity GLB models. Give customers a 360° view of your culinary masterpieces before they order.</p>
+            <h3 className="text-xl font-bold mb-3 text-white">3D Menu Items</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">Upload high-fidelity GLB models. Give customers a 360° view of your culinary masterpieces before they order.</p>
           </div>
 
           {/* Card 2 */}
-          <div className="p-8 rounded-3xl bg-white/60 border border-white/40 shadow-sm hover:shadow-md hover:border-purple-200 transition-all duration-300 group text-left hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-2xl bg-purple-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Smartphone className="text-purple-600 h-6 w-6" />
+          <div className="p-8 rounded-3xl bg-white/5 border border-white/5 shadow-sm hover:shadow-md hover:border-purple-500/30 hover:bg-white/10 transition-all duration-300 group text-left hover:-translate-y-1">
+            <div className="w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Smartphone className="text-purple-400 h-6 w-6" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-900">App-Less AR</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">No app download required. Built on cutting-edge WebAR technology that works directly in the browser.</p>
+            <h3 className="text-xl font-bold mb-3 text-white">App-Less AR</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">No app download required. Built on cutting-edge WebAR technology that works directly in the browser.</p>
           </div>
 
           {/* Card 3 */}
-          <div className="p-8 rounded-3xl bg-white/60 border border-white/40 shadow-sm hover:shadow-md hover:border-pink-200 transition-all duration-300 group text-left hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-2xl bg-pink-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Star className="text-pink-600 h-6 w-6" />
+          <div className="p-8 rounded-3xl bg-white/5 border border-white/5 shadow-sm hover:shadow-md hover:border-pink-500/30 hover:bg-white/10 transition-all duration-300 group text-left backdrop-blur-sm hover:-translate-y-1">
+            <div className="w-12 h-12 rounded-2xl bg-pink-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Star className="text-pink-400 h-6 w-6" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-900">Boost Engagement</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">Visual menus increase appetite and check sizes. Turn dining into a shareable social experience.</p>
+            <h3 className="text-xl font-bold mb-3 text-white">Boost Engagement</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">Visual menus increase appetite and check sizes. Turn dining into a shareable social experience.</p>
           </div>
         </div>
       </section>
