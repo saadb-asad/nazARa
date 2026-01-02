@@ -15,6 +15,7 @@ interface GlareHoverProps {
     playOnce?: boolean;
     className?: string;
     style?: React.CSSProperties;
+    disabled?: boolean;
 }
 
 const GlareHover: React.FC<GlareHoverProps> = ({
@@ -31,7 +32,8 @@ const GlareHover: React.FC<GlareHoverProps> = ({
     transitionDuration = 650,
     playOnce = false,
     className = '',
-    style = {}
+    style = {},
+    disabled = false
 }) => {
     const hex = glareColor.replace('#', '');
     let rgba = glareColor;
@@ -100,10 +102,10 @@ const GlareHover: React.FC<GlareHoverProps> = ({
                 borderColor,
                 ...style
             }}
-            onMouseEnter={animateIn}
-            onMouseLeave={animateOut}
+            onMouseEnter={disabled ? undefined : animateIn}
+            onMouseLeave={disabled ? undefined : animateOut}
         >
-            <div ref={overlayRef} style={overlayStyle} />
+            {!disabled && <div ref={overlayRef} style={overlayStyle} />}
             {children}
         </div>
     );

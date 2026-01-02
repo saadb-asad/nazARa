@@ -148,7 +148,7 @@ export default function Home() {
       </div>
 
       {/* Feature Grid - Below Fold / Bottom */}
-      <section id="features" className="relative z-10 w-full bg-black/20 backdrop-blur-xl border-t border-white/5 py-20 scroll-mt-20">
+      <section id="features" className="relative z-10 w-full bg-black/20 backdrop-blur-xl border-t border-white/5 py-20 scroll-mt-20 min-h-screen flex items-center justify-center">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6 w-full animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-100">
           {/* Card 1 */}
           <GlareHover
@@ -163,6 +163,7 @@ export default function Home() {
             background="rgba(255, 255, 255, 0.05)"
             borderColor="rgba(255, 255, 255, 0.05)"
             borderRadius="1.5rem"
+            disabled={isMobile}
           >
             <div className="p-8 h-full flex flex-col items-start transition-all duration-300 group hover:-translate-y-1">
               <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -218,6 +219,55 @@ export default function Home() {
               <p className="text-gray-400 text-sm leading-relaxed">Visual menus increase appetite and check sizes. Turn dining into a shareable social experience.</p>
             </div>
           </GlareHover>
+        </div>
+      </section>
+
+      {/* About & Contact Section */}
+      <section id="contact" className="relative z-10 w-full bg-[#15151e] border-t border-white/5 py-20">
+        <div className="max-w-6xl mx-auto px-6 w-full flex flex-col md:flex-row gap-12">
+
+          {/* About Us */}
+          <div className="flex-1 space-y-6">
+            <h2 className="text-3xl font-bold tracking-tight text-white mb-6">About Us</h2>
+            <p className="text-gray-400 leading-relaxed">
+              NazARa is pioneering the future of dining by bridging the gap between physical menus and digital experiences. We believe that food should be experienced before it's even ordered. Our mission is to empower restaurants with cutting-edge AR technology that is accessible, app-less, and incredibly engaging.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              Founded by a team of passionate developers and foodies, we are dedicated to transforming how the world eats, one 3D model at a time.
+            </p>
+          </div>
+
+          {/* Contact Us */}
+          <div className="flex-1 space-y-6 bg-white/5 p-8 rounded-2xl border border-white/10">
+            <h2 className="text-3xl font-bold tracking-tight text-white mb-6">Contact Us</h2>
+            <p className="text-gray-400 mb-6">
+              Ready to transform your menu? Get in touch with our team for a demo or custom integration.
+            </p>
+
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 text-gray-300">
+                <div className="h-10 w-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+                </div>
+                <span>hello@nazara.tech</span>
+              </div>
+
+              <div className="flex items-center gap-3 text-gray-300">
+                <div className="h-10 w-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                </div>
+                <span>+1 (555) 123-4567</span>
+              </div>
+
+              <div className="flex items-center gap-3 text-gray-300">
+                <div className="h-10 w-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+                </div>
+                <span>San Francisco, CA</span>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
