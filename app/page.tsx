@@ -18,6 +18,18 @@ export default function Home() {
     setMousePosition({ x, y });
   };
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <div
       className="min-h-screen bg-[#1A1A23] text-white overflow-hidden relative selection:bg-indigo-500/30 font-sans"
@@ -60,7 +72,7 @@ export default function Home() {
         </div>
 
         {/* Blur Text Animation */}
-        <div className="mb-12 pb-4">
+        <div className="mb-6 pb-2">
           <TrueFocus
             sentence="Dining Augmented"
             manualMode={false}
@@ -68,7 +80,7 @@ export default function Home() {
             borderColor="#6C5DD3"
             animationDuration={0.3}
             pauseBetweenAnimations={0.6}
-            loop={false}
+            loop={isMobile}
           />
         </div>
 
