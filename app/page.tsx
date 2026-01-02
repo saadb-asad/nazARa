@@ -39,8 +39,8 @@ export default function Home() {
       onMouseMove={handleMouseMove}
     >
 
-      {/* Beams Background - Top Half Only */}
-      <div className="fixed inset-0 z-0 pointer-events-none h-[50vh] opacity-60">
+      {/* Beams Background - Full Screen */}
+      <div className="fixed inset-0 z-0 pointer-events-none h-screen opacity-60">
         <Beams
           beamWidth={2}
           beamHeight={15}
@@ -52,7 +52,7 @@ export default function Home() {
           rotation={0}
         />
         {/* Gradient fade at bottom of beams to blend with dark bg */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1A1A23]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#1A1A23]" />
       </div>
 
       {/* Hero Section */}
