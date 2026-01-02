@@ -60,7 +60,7 @@ export default function Home() {
 
         {/* Navbar */}
         {/* Navbar */}
-        <div className="absolute top-6 left-0 right-0 z-50 flex justify-center px-4">
+        <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
           <nav className="flex items-center justify-between px-4 py-2 sm:px-6 sm:py-3 w-full max-w-4xl bg-[#1A1A23]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg ring-1 ring-white/5 animate-in fade-in slide-in-from-top-4 duration-700">
 
             {/* Left: Menu Icon */}
