@@ -22,32 +22,6 @@
 *   **Icons**: Lucide React
 *   **Deployment**: Vercel
 
-## 📦 Getting Started
-
-1.  **Clone the repo**:
-    ```bash
-    git clone https://github.com/saadb-asad/nazARa.git
-    cd nazARa
-    ```
-
-2.  **Install dependencies**:
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
-
-3.  **Environment Setup**:
-    Create a `.env.local` file with your Supabase credentials:
-    ```env
-    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-    ```
-
-4.  **Run Development Server**:
-    ```bash
-    npm run dev
-    ```
 
 ## 🎨 Theme (NazARa 2.0)
 
